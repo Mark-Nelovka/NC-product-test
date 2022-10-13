@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import Header from "./Components/Header";
+const Products = lazy(() =>
+  import("./Page/Products" /*webpackChunkName: "Products" */)
+);
+const ProductPage = lazy(() =>
+  import("./Page/Product" /*webpackChunkName: "ProductPage" */)
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main>
+        <Suspense fallback="loading">
+          <Routes>
+            <Route path="/NC-product-test" element={<Products />} />
+            <Route path="/NC-product-test/:id" element={<ProductPage />} />
+          </Routes>
+        </Suspense>
+       
+      </main>
+    </>
   );
 }
 
