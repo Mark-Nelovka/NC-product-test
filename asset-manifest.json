@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/NC-product-test/static/css/main.073c9b0a.css",
-    "main.js": "/NC-product-test/static/js/main.a6ba016a.js",
+    "main.css": "/NC-product-test/static/css/main.6a44111f.css",
+    "main.js": "/NC-product-test/static/js/main.a8222b45.js",
+    "Products.js": "/NC-product-test/static/js/Products.002d7f2e.chunk.js",
+    "ProductPage.js": "/NC-product-test/static/js/ProductPage.0fd225c5.chunk.js",
     "static/js/787.37ea120d.chunk.js": "/NC-product-test/static/js/787.37ea120d.chunk.js",
-    "static/media/logo.svg": "/NC-product-test/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/NC-product-test/index.html",
-    "main.073c9b0a.css.map": "/NC-product-test/static/css/main.073c9b0a.css.map",
-    "main.a6ba016a.js.map": "/NC-product-test/static/js/main.a6ba016a.js.map",
+    "main.6a44111f.css.map": "/NC-product-test/static/css/main.6a44111f.css.map",
+    "main.a8222b45.js.map": "/NC-product-test/static/js/main.a8222b45.js.map",
+    "Products.002d7f2e.chunk.js.map": "/NC-product-test/static/js/Products.002d7f2e.chunk.js.map",
+    "ProductPage.0fd225c5.chunk.js.map": "/NC-product-test/static/js/ProductPage.0fd225c5.chunk.js.map",
     "787.37ea120d.chunk.js.map": "/NC-product-test/static/js/787.37ea120d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.a6ba016a.js"
+    "static/css/main.6a44111f.css",
+    "static/js/main.a8222b45.js"
   ]
 }
