@@ -2,10 +2,10 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 const Products = lazy(() =>
-  import("./Page/Products" /*webpackChunkName: "Products" */)
+  import("./Pages/Products" /*webpackChunkName: "Products" */)
 );
 const ProductPage = lazy(() =>
-  import("./Page/Product" /*webpackChunkName: "ProductPage" */)
+  import("./Pages/Product" /*webpackChunkName: "ProductPage" */)
 );
 
 function App() {

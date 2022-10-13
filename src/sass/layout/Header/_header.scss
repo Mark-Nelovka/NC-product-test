@@ -4,13 +4,8 @@
 }
 
 .header_title {
-  font-family: "Anek Telugu";
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 31px;
+  @include text($header-font, 600, 32px, 31px, $heart);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-
-  color: #414141;
   text-align: end;
 }
