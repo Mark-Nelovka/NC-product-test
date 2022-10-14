@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/ProductPage.0fd225c5.chunk.js","mappings":"8JAAe,SAASA,IACpB,OACI,wCAER,C","sources":["Page/Product.tsx"],"sourcesContent":["export default function ProductPage() {\n    return (\n        <div>ProductPage</div>\n    )\n}"],"names":["ProductPage"],"sourceRoot":""}

@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/NC-product-test/static/css/main.6a44111f.css",
-    "main.js": "/NC-product-test/static/js/main.a8222b45.js",
-    "Products.js": "/NC-product-test/static/js/Products.002d7f2e.chunk.js",
-    "ProductPage.js": "/NC-product-test/static/js/ProductPage.0fd225c5.chunk.js",
+    "main.css": "/NC-product-test/static/css/main.97f8d39b.css",
+    "main.js": "/NC-product-test/static/js/main.afa60cbd.js",
+    "Products.js": "/NC-product-test/static/js/Products.019dfe30.chunk.js",
+    "ProductPage.js": "/NC-product-test/static/js/ProductPage.4b2725bc.chunk.js",
     "static/js/787.37ea120d.chunk.js": "/NC-product-test/static/js/787.37ea120d.chunk.js",
+    "static/js/684.6e269434.chunk.js": "/NC-product-test/static/js/684.6e269434.chunk.js",
     "index.html": "/NC-product-test/index.html",
-    "main.6a44111f.css.map": "/NC-product-test/static/css/main.6a44111f.css.map",
-    "main.a8222b45.js.map": "/NC-product-test/static/js/main.a8222b45.js.map",
-    "Products.002d7f2e.chunk.js.map": "/NC-product-test/static/js/Products.002d7f2e.chunk.js.map",
-    "ProductPage.0fd225c5.chunk.js.map": "/NC-product-test/static/js/ProductPage.0fd225c5.chunk.js.map",
-    "787.37ea120d.chunk.js.map": "/NC-product-test/static/js/787.37ea120d.chunk.js.map"
+    "main.97f8d39b.css.map": "/NC-product-test/static/css/main.97f8d39b.css.map",
+    "main.afa60cbd.js.map": "/NC-product-test/static/js/main.afa60cbd.js.map",
+    "Products.019dfe30.chunk.js.map": "/NC-product-test/static/js/Products.019dfe30.chunk.js.map",
+    "ProductPage.4b2725bc.chunk.js.map": "/NC-product-test/static/js/ProductPage.4b2725bc.chunk.js.map",
+    "787.37ea120d.chunk.js.map": "/NC-product-test/static/js/787.37ea120d.chunk.js.map",
+    "684.6e269434.chunk.js.map": "/NC-product-test/static/js/684.6e269434.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a44111f.css",
-    "static/js/main.a8222b45.js"
+    "static/css/main.97f8d39b.css",
+    "static/js/main.afa60cbd.js"
   ]
 }
