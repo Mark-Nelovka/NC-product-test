@@ -1,0 +1,18 @@
+.basket_container {
+  background: #ffffff;
+  border: 2px dashed $heart;
+  border-radius: 30px;
+  padding: 45px 30px;
+  margin-right: 176px;
+  & > p {
+    @include text($header-font, $boldest, 24px, 36px, $heart);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+  }
+}
+
+.basket_list {
+  height: 880px;
+  width: 407px;
+}

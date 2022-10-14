@@ -1,5 +1,10 @@
 export const Basket = () => {
     return (
-        <div>Basket</div>
+        <div className="basket_container">
+            <p>Favorites</p>
+            <ul className="basket_list">
+                <li>Shloimys Sprinkles Cookies</li>
+            </ul>
+        </div>
     )
 }
