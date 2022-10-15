@@ -3,7 +3,7 @@
 }
 
 .products-list_section {
-  @include position(flex, center, initial, initial);
+  @include position(flex, initial, initial, initial);
   padding-top: 85px;
   padding-left: 100px;
   padding-right: 100px;
@@ -12,6 +12,9 @@
 .products-list_List {
   @include position(flex, center, initial, wrap);
   margin-right: -30px;
+  height: 100%;
+  // overflow-y: scroll;
+  // overflow: scroll;
 }
 
 .products-list_item {

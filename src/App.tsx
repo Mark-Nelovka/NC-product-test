@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Header from "./Components/Header";
+// import Header from "./Components/Header";
 const Products = lazy(() =>
   import("./Pages/Products" /*webpackChunkName: "Products" */)
 );
@@ -11,7 +11,6 @@ const ProductPage = lazy(() =>
 function App() {
   return (
     <>
-      <Header />
       <main>
         <Suspense fallback="loading">
           <Routes>
@@ -20,7 +19,7 @@ function App() {
           </Routes>
         </Suspense>
        
-      </main>
+      </main> 
     </>
   );
 }
