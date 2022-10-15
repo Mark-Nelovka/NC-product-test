@@ -11,15 +11,12 @@ const ProductPage = lazy(() =>
 function App() {
   return (
     <>
-      <main>
         <Suspense fallback="loading">
           <Routes>
             <Route path="/NC-product-test" element={<Products />} />
             <Route path="/NC-product-test/:id" element={<ProductPage />} />
           </Routes>
         </Suspense>
-       
-      </main> 
     </>
   );
 }

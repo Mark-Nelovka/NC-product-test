@@ -1,20 +1,22 @@
-.products_container {
-  @include position(flex, center, space-between, initial);
+.products-page_container {
+  @include position(flex, initial, space-between, initial);
 }
 
-.products-list_section {
-  @include position(flex, initial, initial, initial);
-  padding-top: 85px;
-  padding-left: 100px;
-  padding-right: 100px;
-}
+// .products_container {
+//   @include position(flex, center, space-between, initial);
+// }
+
+// .products-list_section {
+//   @include position(flex, initial, initial, initial);
+//   padding-top: 85px;
+//   padding-left: 100px;
+//   padding-right: 100px;
+// }
 
 .products-list_List {
   @include position(flex, center, initial, wrap);
   margin-right: -30px;
-  height: 100%;
-  // overflow-y: scroll;
-  // overflow: scroll;
+  margin-bottom: -30px;
 }
 
 .products-list_item {
@@ -22,6 +24,58 @@
   border: 1px dashed $heart;
   border-radius: 30px;
   width: 262px;
-  margin-right: 30px;
-  padding: 13px 15px 22px 15px;
+  height: 350px;
+  margin-bottom: 30px;
+  padding: 26px 35px 22px 35px;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.products-list_button-container {
+  @include position(flex, center, space-between, initial);
+}
+
+.products-list_button {
+  // @include position(flex, center, center, initial);
+
+  width: 32px;
+  height: 32px;
+  background-color: $background-button;
+  border-radius: 5px;
+}
+
+.heart {
+  position: relative;
+  width: 10px;
+  height: 18px;
+  margin-left: 8.5px;
+  background-color: $white;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  /* Определяем угол наклона */
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+/* Формируем правую часть */
+.heart:before {
+  position: absolute;
+  width: 18px;
+  height: 10px;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background-color: $white;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 0 50px 50px 0;
+}
+/* Убираем тень при наведении */
+.heart:hover:before,
+.heart:hover {
+  box-shadow: none;
 }

@@ -1,60 +1,126 @@
-import Basket from "../Basket"
 import { FixedSizeGrid as Grid } from 'react-window';
-import IProduct from "../../Interfaces/Product.interface"
-import { Link } from "react-router-dom"
-import Header from "../Header"
+import AutoSizer from "react-virtualized-auto-sizer";
+// import { styled } from '@mui/material/styles';
+// import Box from '@mui/material/Box';
+// import Paper from '@mui/material/Paper';
+// import Grid from '@mui/material/Grid';
+// import IProduct from "../../Interfaces/Product.interface"
+import { setGlobalState, useGlobalState } from '../../state';
+import { useNavigate } from 'react-router-dom';
 
 const PATH = "https://testbackend.nc-one.com"
 
-interface Props {
-    products: IProduct[] | null
-}
+// interface Props {
+//     products?: IProduct[] | null,
+//     style?: any
+// }
 
-const Qwe = () => {
+// const Item = styled(Paper)(({ theme }) => ({
+//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+//   ...theme.typography.body2,
+//   padding: theme.spacing(1),
+//   textAlign: 'center',
+//   color: theme.palette.text.secondary,
+// }));
+
+// function FormRow() {
+//   return (
+//     <React.Fragment>
+//       <Grid item xs={4}>
+//         <Item>Item</Item>
+//       </Grid>
+//       <Grid item xs={4}>
+//         <Item>Item</Item>
+//       </Grid>
+//       <Grid item xs={4}>
+//         <Item>Item</Item>
+//       </Grid>
+//       <Grid item xs={4}>
+//         <Item>Item</Item>
+//       </Grid>
+//     </React.Fragment>
+//   );
+// }
+
+// export default function NestedGrid() {
+//   return (
+//     <Box sx={{ flexGrow: 1 }}>
+//       <Grid container spacing={1}>
+//         <Grid container item spacing={3}>
+//           <ProductsItem />
+//         </Grid>
+//         <Grid container item spacing={3}>
+//           <FormRow />
+//         </Grid>
+//         <Grid container item spacing={3}>
+//           <FormRow />
+//         </Grid>
+//       </Grid>
+//     </Box>
+//   );
+// }
+export const ProductsItem = () => {
+    const products = useGlobalState("items");
+    const items = useGlobalState("itemForBasket");
+    const navigate = useNavigate();
+
+    const handleClick = (event: React.MouseEvent) => {
+        const { id } = event.currentTarget as HTMLElement;
+        const { nodeName } = event.target as HTMLElement;
+        if (nodeName === "DIV" || nodeName === "BUTTON") {
+            setGlobalState("id", +id)
+            const saveBasket = products[0]!.find(el => el.id === +id);
+            if (!items[0]) {
+                setGlobalState("itemForBasket", [saveBasket!])
+                return;
+            }
+            setGlobalState("itemForBasket", [...items[0], saveBasket!])
+            return;
+        }
+        navigate(`/NC-product-test/${id}`)
+
+    }
+// style={style}
     return (
-        <ul className="products-list_List">
-            <li>
-                ascscsdcsdc
-            </li>
-                {/* {products && products.map(({ name, id, src, price }) => {
-                    return <li className="products-list_item " key={id}>
-                    <Link to={`/NC-product-test/${id}`} state={{ name, id, src, price }} >
-                        <img src={`${PATH}${src}`} alt={name} width="232" />
+        <ul  className="products-list_List" >
+            {products[0] && products[0].map(({ name, id, src, price }) => {
+                return <li onClick={handleClick} className="products-list_item" key={id} id={String(id)} >
+                        <img src={`${PATH}${src}`} alt={name} width="232"  />
                         <p>{name}</p>
-                        <p>{price}</p>
-                    </Link>
-                    </li>
-                  
-                })} */}
+                        <div className='products-list_button-container'>
+                           <p>$ {price}</p>
+                            <button id="button" className='products-list_button'>
+                                <div className='heart'></div>
+                            </button>
+                        </div>
+                </li>
+
+            })}
         </ul>
     )
-} 
+}
 
 
 
 
-export const ProductsList = ({products}: Props) => {
-
+export const ProductsList = () => {
     return (
-        <>  <Header />
-        <section className="products-list_section">
-                <Basket />
-                  <Grid
-    className="Grid"
-    columnCount={4}
-    columnWidth={100}
-    height={150}
-    rowCount={1000}
-    rowHeight={25}
-    width={400}
+        <AutoSizer>
+            {({ height, width }) => (
+                 <Grid
+                    className="Grid"
+                    columnCount={4}
+                    columnWidth={262}
+                    height={height}
+                    rowCount={1000}
+                    rowHeight={20}
+                    width={width}
                 >
-                    {Qwe}
+                    {ProductsItem}
                 </Grid>
-           
-        </section></>
-      
-        
-                
+            )}
+        </AutoSizer>
+               
     )
 }
 

@@ -1,3 +1,3 @@
-import { ProductsList } from "./ProductsList";
+import { ProductsItem } from "./ProductsList";
 
-export default ProductsList;
+export default ProductsItem;
