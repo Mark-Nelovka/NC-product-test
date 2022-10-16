@@ -68,19 +68,25 @@ export const ProductsItem = () => {
         const { id } = event.currentTarget as HTMLElement;
         const { nodeName } = event.target as HTMLElement;
         if (nodeName === "DIV" || nodeName === "BUTTON") {
-            setGlobalState("id", +id)
+            
             const saveBasket = products[0]!.find(el => el.id === +id);
             if (!items[0]) {
                 setGlobalState("itemForBasket", [saveBasket!])
                 return;
             }
-            setGlobalState("itemForBasket", [...items[0], saveBasket!])
+            const findRepeatItem = items[0].find(element => element.id === +id);
+            if (findRepeatItem) {
+                const deleteActiveId = items[0].filter(e => e.id !== +id);
+                setGlobalState("itemForBasket", deleteActiveId)
+                return;
+            }            
+            setGlobalState("itemForBasket", [...items[0], saveBasket!])           
             return;
         }
         navigate(`/NC-product-test/${id}`)
 
     }
-// style={style}
+
     return (
         <ul  className="products-list_List" >
             {products[0] && products[0].map(({ name, id, src, price }) => {
@@ -90,7 +96,7 @@ export const ProductsItem = () => {
                         <div className='products-list_button-container'>
                            <p>$ {price}</p>
                             <button id="button" className='products-list_button'>
-                                <div className='heart'></div>
+                                <div className={items[0] && items[0].find(elem => elem.id === +id) ? "heart--active" : "heart"}></div>
                             </button>
                         </div>
                 </li>
@@ -99,8 +105,6 @@ export const ProductsItem = () => {
         </ul>
     )
 }
-
-
 
 
 export const ProductsList = () => {

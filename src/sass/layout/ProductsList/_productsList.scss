@@ -20,20 +20,40 @@
 }
 
 .products-list_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: $white;
   border: 1px dashed $heart;
   border-radius: 30px;
   width: 262px;
-  height: 350px;
+  height: 400px;
   margin-bottom: 30px;
   padding: 26px 35px 22px 35px;
   &:not(:last-child) {
     margin-right: 30px;
   }
+
+  & > p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #414141;
+    // overflow: scroll;
+    // @include text($main-font, $reqular, 20px, 30px, $heart);
+    // margin-top: 15px;
+    // margin-bottom: 15px;
+  }
 }
 
 .products-list_button-container {
   @include position(flex, center, space-between, initial);
+  & > p {
+    @include text($main-font, $bold, 24px, 36px, $heart);
+  }
 }
 
 .products-list_button {
@@ -54,14 +74,13 @@
   -webkit-border-radius: 50px 50px 0 0;
   -moz-border-radius: 50px 50px 0 0;
   border-radius: 50px 50px 0 0;
-  /* Определяем угол наклона */
   -webkit-transform: rotate(315deg);
   -moz-transform: rotate(315deg);
   -ms-transform: rotate(315deg);
   -o-transform: rotate(315deg);
   transform: rotate(315deg);
 }
-/* Формируем правую часть */
+
 .heart:before {
   position: absolute;
   width: 18px;
@@ -74,8 +93,32 @@
   -moz-border-radius: 50px 50px 0 0;
   border-radius: 0 50px 50px 0;
 }
-/* Убираем тень при наведении */
-.heart:hover:before,
-.heart:hover {
-  box-shadow: none;
+
+.heart--active {
+  position: relative;
+  width: 10px;
+  height: 18px;
+  margin-left: 8.5px;
+  background-color: $heart;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+.heart--active:before {
+  position: absolute;
+  width: 18px;
+  height: 10px;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background-color: $heart;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 0 50px 50px 0;
 }
