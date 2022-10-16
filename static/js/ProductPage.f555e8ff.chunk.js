@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkprosto=self.webpackChunkprosto||[]).push([[516],{536:function(e,n,o){o.r(n),o.d(n,{default:function(){return t}});var r=o(184);function t(){return console.log("ProductPage"),(0,r.jsx)("div",{children:"ProductPage"})}}}]);
+//# sourceMappingURL=ProductPage.f555e8ff.chunk.js.map
