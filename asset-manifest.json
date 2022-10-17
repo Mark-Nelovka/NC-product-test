@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/NC-product-test/static/css/main.eb7dd4ee.css",
-    "main.js": "/NC-product-test/static/js/main.bc4fa47f.js",
-    "Products.js": "/NC-product-test/static/js/Products.04160288.chunk.js",
-    "ProductPage.js": "/NC-product-test/static/js/ProductPage.ccdbd956.chunk.js",
+    "main.css": "/NC-product-test/static/css/main.0fde22b9.css",
+    "main.js": "/NC-product-test/static/js/main.7049265c.js",
+    "Products.js": "/NC-product-test/static/js/Products.bffd02b4.chunk.js",
+    "ProductPage.js": "/NC-product-test/static/js/ProductPage.36121c9f.chunk.js",
+    "PageNotFound.js": "/NC-product-test/static/js/PageNotFound.1f4b3fae.chunk.js",
     "static/js/787.37ea120d.chunk.js": "/NC-product-test/static/js/787.37ea120d.chunk.js",
     "static/js/451.06b60199.chunk.js": "/NC-product-test/static/js/451.06b60199.chunk.js",
     "index.html": "/NC-product-test/index.html",
-    "main.eb7dd4ee.css.map": "/NC-product-test/static/css/main.eb7dd4ee.css.map",
-    "main.bc4fa47f.js.map": "/NC-product-test/static/js/main.bc4fa47f.js.map",
-    "Products.04160288.chunk.js.map": "/NC-product-test/static/js/Products.04160288.chunk.js.map",
-    "ProductPage.ccdbd956.chunk.js.map": "/NC-product-test/static/js/ProductPage.ccdbd956.chunk.js.map",
+    "main.0fde22b9.css.map": "/NC-product-test/static/css/main.0fde22b9.css.map",
+    "main.7049265c.js.map": "/NC-product-test/static/js/main.7049265c.js.map",
+    "Products.bffd02b4.chunk.js.map": "/NC-product-test/static/js/Products.bffd02b4.chunk.js.map",
+    "ProductPage.36121c9f.chunk.js.map": "/NC-product-test/static/js/ProductPage.36121c9f.chunk.js.map",
+    "PageNotFound.1f4b3fae.chunk.js.map": "/NC-product-test/static/js/PageNotFound.1f4b3fae.chunk.js.map",
     "787.37ea120d.chunk.js.map": "/NC-product-test/static/js/787.37ea120d.chunk.js.map",
     "451.06b60199.chunk.js.map": "/NC-product-test/static/js/451.06b60199.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb7dd4ee.css",
-    "static/js/main.bc4fa47f.js"
+    "static/css/main.0fde22b9.css",
+    "static/js/main.7049265c.js"
   ]
 }
