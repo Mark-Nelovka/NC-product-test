@@ -1,20 +1,13 @@
 .products-page_container {
   @include position(flex, initial, space-between, initial);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
-
-// .products_container {
-//   @include position(flex, center, space-between, initial);
-// }
-
-// .products-list_section {
-//   @include position(flex, initial, initial, initial);
-//   padding-top: 85px;
-//   padding-left: 100px;
-//   padding-right: 100px;
-// }
 
 .products-list_List {
   @include position(flex, center, initial, wrap);
+  width: calc(262px * 4 + 120px);
+  margin-left: auto;
   margin-right: -30px;
   margin-bottom: -30px;
 }
@@ -35,17 +28,7 @@
   }
 
   & > p {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-
-    color: #414141;
-    // overflow: scroll;
-    // @include text($main-font, $reqular, 20px, 30px, $heart);
-    // margin-top: 15px;
-    // margin-bottom: 15px;
+    @include text($main-font, $reqular, 20px, 30px, $heart);
   }
 }
 
@@ -57,8 +40,6 @@
 }
 
 .products-list_button {
-  // @include position(flex, center, center, initial);
-
   width: 32px;
   height: 32px;
   background-color: $background-button;

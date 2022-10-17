@@ -1,64 +1,12 @@
 import { FixedSizeGrid as Grid } from 'react-window';
 import AutoSizer from "react-virtualized-auto-sizer";
-// import { styled } from '@mui/material/styles';
-// import Box from '@mui/material/Box';
-// import Paper from '@mui/material/Paper';
-// import Grid from '@mui/material/Grid';
-// import IProduct from "../../Interfaces/Product.interface"
 import { setGlobalState, useGlobalState } from '../../state';
 import { useNavigate } from 'react-router-dom';
+import { PATH_BACKEND } from '../../constants/constants';
+import deleteItem from '../../General/deleteItem';
 
-const PATH = "https://testbackend.nc-one.com"
 
-// interface Props {
-//     products?: IProduct[] | null,
-//     style?: any
-// }
 
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
-
-// function FormRow() {
-//   return (
-//     <React.Fragment>
-//       <Grid item xs={4}>
-//         <Item>Item</Item>
-//       </Grid>
-//       <Grid item xs={4}>
-//         <Item>Item</Item>
-//       </Grid>
-//       <Grid item xs={4}>
-//         <Item>Item</Item>
-//       </Grid>
-//       <Grid item xs={4}>
-//         <Item>Item</Item>
-//       </Grid>
-//     </React.Fragment>
-//   );
-// }
-
-// export default function NestedGrid() {
-//   return (
-//     <Box sx={{ flexGrow: 1 }}>
-//       <Grid container spacing={1}>
-//         <Grid container item spacing={3}>
-//           <ProductsItem />
-//         </Grid>
-//         <Grid container item spacing={3}>
-//           <FormRow />
-//         </Grid>
-//         <Grid container item spacing={3}>
-//           <FormRow />
-//         </Grid>
-//       </Grid>
-//     </Box>
-//   );
-// }
 export const ProductsItem = () => {
     const products = useGlobalState("items");
     const items = useGlobalState("itemForBasket");
@@ -76,8 +24,9 @@ export const ProductsItem = () => {
             }
             const findRepeatItem = items[0].find(element => element.id === +id);
             if (findRepeatItem) {
-                const deleteActiveId = items[0].filter(e => e.id !== +id);
-                setGlobalState("itemForBasket", deleteActiveId)
+                deleteItem(items[0], id)
+                // const deleteActiveId = items[0].filter(e => e.id !== +id);
+                // setGlobalState("itemForBasket", deleteActiveId)
                 return;
             }            
             setGlobalState("itemForBasket", [...items[0], saveBasket!])           
@@ -91,7 +40,7 @@ export const ProductsItem = () => {
         <ul  className="products-list_List" >
             {products[0] && products[0].map(({ name, id, src, price }) => {
                 return <li onClick={handleClick} className="products-list_item" key={id} id={String(id)} >
-                        <img src={`${PATH}${src}`} alt={name} width="232"  />
+                        <img src={`${PATH_BACKEND}${src}`} alt={name} width="232"  />
                         <p>{name}</p>
                         <div className='products-list_button-container'>
                            <p>$ {price}</p>

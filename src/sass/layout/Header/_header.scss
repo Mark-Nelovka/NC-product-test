@@ -1,4 +1,7 @@
 .header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   background-color: $background-button;
   padding-top: 33px;
   padding-bottom: 36px;

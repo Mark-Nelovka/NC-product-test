@@ -1,9 +1,10 @@
 .basket_container {
+  position: fixed;
   background: #ffffff;
   border: 2px dashed $heart;
   border-radius: 30px;
   padding: 45px 30px;
-  margin-right: 176px;
+  width: 407px;
   & > p {
     @include text($header-font, $boldest, 24px, 36px, $heart);
     letter-spacing: 0.05em;
@@ -13,6 +14,36 @@
 }
 
 .basket_list {
-  height: 880px;
-  width: 407px;
+  height: 60vh;
+  width: auto;
+  overflow: scroll;
+}
+
+.basket_list-item {
+  @include position(flex, center, initial, initial);
+  background: #fbfbfb;
+  border-radius: 30px;
+  padding: 20px 20px 20px 15px;
+  // height: 130px;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  & > img {
+    background-color: inherit;
+  }
+}
+
+.basket_info-container {
+  margin-left: 20px;
+  width: 100%;
+  & > p {
+    display: inline-block;
+
+    @include text($main-font, $reqular, 16px, 24px, $heart);
+    margin-bottom: 10px;
+  }
+}
+
+.basket_button-container {
+  @include position(flex, center, space-between, initial);
 }

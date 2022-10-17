@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import getAllProducts from "../API/getAllProducts"
 import Basket from "../Components/Basket";
+import BasketGrid from "../Components/Basket/Basket";
 import Header from "../Components/Header";
 import ProductsItem from "../Components/ProductsList"
 import IProduct from "../Interfaces/Product.interface"
@@ -34,7 +35,7 @@ export default function Products() {
    <section className="product-pages_section">
                 <div className="container">
                     <div className="products-page_container">
-                <Basket />
+                <BasketGrid />
                  <ProductsItem />
                 </div>
            
