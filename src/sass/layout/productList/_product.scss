@@ -1,3 +1,10 @@
+.product-pages_section {
+  height: 100vh;
+
+  background-color: $background-main;
+  padding-top: 100px;
+}
+
 .product_container {
   @include position(flex, center, space-between, initial);
   margin-left: auto;

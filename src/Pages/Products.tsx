@@ -1,46 +1,44 @@
-import { useEffect } from "react"
-import getAllProducts from "../API/getAllProducts"
-import BasketGrid from "../Components/Basket/Basket";
+import { useEffect, useState } from "react";
+import getAllProducts from "../API/getAllProducts";
+import Basket from "../Components/Basket";
 import Header from "../Components/Header";
-import ProductsItem from "../Components/ProductsList"
-import IProduct from "../Interfaces/Product.interface"
+import ProductsList from "../Components/ProductsList";
+import IProduct from "../Interfaces/Product.interface";
 import { setGlobalState } from "../state";
+import PageNotFound from "./NotFound";
 
 export default function Products() {
+  const [error, setError] = useState(false);
 
-    useEffect(() => {
-        getProducts();
-        async function getProducts() {
-            try {
-                const allProducts: IProduct[] = await getAllProducts();
-                setGlobalState("items", allProducts);
-            } catch (error) {
-                // setError(true);
-            }
+  useEffect(() => {
+    getProducts();
+    async function getProducts() {
+      try {
+        const allProducts: IProduct[] = await getAllProducts();
+        setGlobalState("items", allProducts);
+        setError(false);
+      } catch (error) {
+        setError(true);
+      }
+    }
+  }, []);
 
-        }
-    }, [])
-    
-
-    
-
-    return (
-        <>
-            <Header title="Products list Page" />
-            <main>
-   <section className="product-pages_section">
-                <div className="container">
-                    <div className="products-page_container">
-                <BasketGrid />
-                 <ProductsItem />
-                </div>
-           
-                </div>
-               
-            </section>
-            </main>
-         
-            </>
-    )
+  return (
+    <>
+      <Header title="Products list Page" />
+      {error && <PageNotFound />}
+      {!error && (
+        <main>
+          <section className="products-pages_section">
+            <div className="container">
+              <div className="products-page_container">
+                <Basket />
+                <ProductsList />
+              </div>
+            </div>
+          </section>
+        </main>
+      )}
+    </>
+  );
 }
-

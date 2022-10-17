@@ -1,0 +1,4 @@
+.not-found {
+  @include position(flex, center, center, initial);
+  height: 100vh;
+}
