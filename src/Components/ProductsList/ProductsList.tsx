@@ -25,8 +25,6 @@ export const ProductsItem = () => {
             const findRepeatItem = items[0].find(element => element.id === +id);
             if (findRepeatItem) {
                 deleteItem(items[0], id)
-                // const deleteActiveId = items[0].filter(e => e.id !== +id);
-                // setGlobalState("itemForBasket", deleteActiveId)
                 return;
             }            
             setGlobalState("itemForBasket", [...items[0], saveBasket!])           

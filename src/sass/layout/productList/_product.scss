@@ -1,0 +1,89 @@
+.product_container {
+  @include position(flex, center, space-between, initial);
+  margin-left: auto;
+}
+
+.product_image-container {
+  margin-right: 136px;
+}
+
+.product_info-container {
+  width: 600px;
+  & > p {
+    @include text($main-font, $reqular, 64px, 96px, $heart);
+    margin-bottom: 65px;
+  }
+}
+
+.product_list-button-container {
+  @include position(flex, center, space-between, initial);
+
+  & > span {
+    @include text($main-font, $bold, 64px, 96px, $heart);
+  }
+}
+
+.product-list_button {
+  width: 86px;
+  height: 86px;
+  background-color: $background-button;
+  border-radius: 5px;
+}
+
+.product_heart {
+  position: relative;
+  width: 28px;
+  height: 52px;
+  margin-left: 21px;
+  background-color: $white;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+.product_heart:before {
+  position: absolute;
+  width: 53px;
+  height: 27px;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background-color: $white;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 0 50px 50px 0;
+}
+
+.product_heart--active {
+  position: relative;
+  width: 28px;
+  height: 52px;
+  margin-left: 21px;
+  background-color: $heart;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+.product_heart--active:before {
+  position: absolute;
+  width: 53px;
+  height: 27px;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background-color: $heart;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 0 50px 50px 0;
+}

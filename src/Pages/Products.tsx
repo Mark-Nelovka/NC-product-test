@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import getAllProducts from "../API/getAllProducts"
-import Basket from "../Components/Basket";
 import BasketGrid from "../Components/Basket/Basket";
 import Header from "../Components/Header";
 import ProductsItem from "../Components/ProductsList"
@@ -8,9 +7,6 @@ import IProduct from "../Interfaces/Product.interface"
 import { setGlobalState } from "../state";
 
 export default function Products() {
-    // const [products, setProducts] = useState<IProduct[] | null>(null);
-    // const [error, setError] = useState(false);
-
 
     useEffect(() => {
         getProducts();
@@ -30,7 +26,7 @@ export default function Products() {
 
     return (
         <>
-            <Header />
+            <Header title="Products list Page" />
             <main>
    <section className="product-pages_section">
                 <div className="container">
